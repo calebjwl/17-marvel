@@ -3,4 +3,86 @@
 
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 // @import 'font-awesome';
+
+$c-nav: #2c3e50;
+
+$s-bottom-line: #000 0.1rem solid;
+
 @import 'box-sizing';
+@import 'reset';
+
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background: $c-nav;
+  padding: 1rem 0;
+
+  &__title {
+    width: 60rem;
+    margin: 0;
+    color: #fefefe;
+    font-family: American Typewriter;
+  }
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  margin: 0;
+  border-bottom: $s-bottom-line;
+  font-family: American Typewriter;
+}
+
+.container {
+  display: flex;
+  width: 60rem;
+}
+
+.sidebar {
+  width: 25%;
+  margin: 1rem;
+
+  &__pic {
+    border-radius: 0.5rem;
+  }
+
+  &__title {
+    font-size: 20px;
+  }
+}
+
+.creator {
+  font-size: 15px;
+}
+
+.series {
+  width: 75%;
+  margin: 1rem;
+}
+
+.characters {
+
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__item {
+    width: calc(100% / 4 - 2rem);
+    margin: 1rem;
+  }
+}
+
+.card {
+
+  &__pic {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+}
