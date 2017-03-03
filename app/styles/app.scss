@@ -5,23 +5,23 @@
 // @import 'font-awesome';
 
 $c-nav: #2c3e50;
+$c-white: #fefefe;
 
 $s-bottom-line: #000 0.1rem solid;
 
 @import 'box-sizing';
 @import 'reset';
 
-
 .navbar {
   display: flex;
   justify-content: center;
-  background: $c-nav;
   padding: 1rem 0;
+  background: $c-nav;
 
   &__title {
     width: 60rem;
     margin: 0;
-    color: #fefefe;
+    color: $c-white;
     font-family: American Typewriter;
   }
 }
@@ -43,7 +43,7 @@ $s-bottom-line: #000 0.1rem solid;
 }
 
 .sidebar {
-  width: 25%;
+  width: 30%;
   margin: 1rem;
 
   &__pic {
@@ -60,7 +60,7 @@ $s-bottom-line: #000 0.1rem solid;
 }
 
 .series {
-  width: 75%;
+  width: 70%;
   margin: 1rem;
 }
 
@@ -84,5 +84,46 @@ $s-bottom-line: #000 0.1rem solid;
   &__pic {
     width: 100%;
     border-radius: 0.5rem;
+  }
+
+  &__number {
+    font-size: 20px;
+  }
+}
+
+.read-more {
+  width: 100%;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background: $c-nav;
+  color: $c-white;
+  cursor: pointer;
+}
+
+
+.exit {
+  margin: 0.5rem;
+  float: right;
+  border: 0;
+  background: $c-white;
+  cursor: pointer;
+}
+
+.app {
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 75%;
+  min-height: 10rem;
+  transform: translate(-50%, -50%);
+  background: blue;
+
+  &-desc {
+
   }
 }
