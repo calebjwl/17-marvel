@@ -36,10 +36,10 @@ function setModal(state, action) {
   }
 }
 
-function clearModal(state, action) {
+function clearModal(state = null, action) {
   switch (action.type) {
     case 'MODAL@CLEAR':
-      return action.data;
+      return state;
     default:
       return state;
   }
