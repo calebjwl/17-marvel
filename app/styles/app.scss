@@ -17,17 +17,15 @@ $s-bottom-line: #000 0.1rem solid;
   justify-content: center;
   padding: 1rem 0;
   background: $c-nav;
+  box-shadow: 0px 3px 3px rgba(#000,.51);
 
-  &__title {
+  &__logo {
     width: 60rem;
-    margin: 0;
-    color: $c-white;
-    font-family: American Typewriter;
   }
+}
 
-  // &__logo {
-  //   width: 5rem;
-  // }
+.marvel {
+  width: 7rem;
 }
 
 .section {
@@ -38,7 +36,7 @@ $s-bottom-line: #000 0.1rem solid;
 .title {
   margin: 0;
   border-bottom: $s-bottom-line;
-  font-family: American Typewriter;
+  font-size: 22px;
 }
 
 .container {
@@ -120,12 +118,11 @@ $s-bottom-line: #000 0.1rem solid;
 
 .modal {
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   width: 75%;
   min-height: 10rem;
   transform: translate(-50%, -50%);
-  background: blue;
 
   &-desc {
 

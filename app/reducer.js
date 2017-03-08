@@ -9,7 +9,7 @@ function seriesInfo(state = null, action) {
   }
 }
 
-function characterData(state, action) {
+function characterData(state = [], action) {
   switch (action.type) {
     case 'CHARACTERS@FIND_ALL_COMPLETE':
       return action.data;
@@ -18,7 +18,7 @@ function characterData(state, action) {
   }
 }
 
-function comicData(state, action) {
+function comicData(state = [], action) {
   switch (action.type) {
     case 'COMICS@FIND_ALL_COMPLETE':
       return action.data;
@@ -27,19 +27,12 @@ function comicData(state, action) {
   }
 }
 
-function setModal(state, action) {
+function modal(state = null, action) {
   switch (action.type) {
     case 'MODAL@SET':
       return action.data;
-    default:
-      return state;
-  }
-}
-
-function clearModal(state = null, action) {
-  switch (action.type) {
     case 'MODAL@CLEAR':
-      return state;
+      return null;
     default:
       return state;
   }
@@ -49,6 +42,5 @@ export default combineReducers({
   seriesInfo,
   characterData,
   comicData,
-  setModal,
-  clearModal
+  modal,
 });

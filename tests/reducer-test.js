@@ -1,11 +1,5 @@
 import reducer from '../app/reducer';
 
-module('reducer', () => {
-  test('it exists', (assert) => {
-    assert.ok(reducer, 'reducer exists');
-  });
-});
-
 test('When loading series info, replace the old series info', (assert) => {
   const oldState = { characterData: [], comicData: [], seriesInfo: null, modal: null };
   const action = { type: 'SERIES_INFO@LOAD_COMPLETE', data: { name: 'Spodermon' } };
