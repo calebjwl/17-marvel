@@ -53,7 +53,7 @@ export function charactersFindForId(id) {
 }
 
 export function comicsFindForId(id) {
-  fetch('http://marvel-is-broke.herokuapp.com/series/1928/comics')
+  fetch(`http://marvel-is-broke.herokuapp.com/series/${id}/comics`)
   .then(response => response.json())
   .then((data) => {
     next(comicsLoadComplete(data));

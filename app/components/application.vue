@@ -1,14 +1,15 @@
 <template lang="html">
   <div class="app">
     <div class="navbar">
-      <img src="../../public/img/marvel-logo.png" alt="" class="navbar__logo">
-      <!-- <h1 class="navbar__title">Marvel</h1> -->
+      <!-- <img src="../../public/img/marvel-logo.png" alt="" class="navbar__logo"> -->
+      <h1 class="navbar__title">Marvel</h1>
     </div>
 
     <div class="section">
       <div class="container">
         <div class="sidebar">
           <img src="http://fillmurray.com/300/300" alt="" class="sidebar__pic">
+          <!-- <img :src=" `${seriesInfo.thumbnail.path}.${seriesInfo.thumbnail.extension}` " alt="" class="sidebar__pic"> -->
           <p class="sidebar__title">A Very Murray Christmas (2010)</p>
           <p class="year">2010</p>
 
@@ -105,9 +106,12 @@
 
 <script>
 import store from '../store';
+import { seriesInfoSearch } from '../actions';
+
 export default {
   data() {
     return {
+      series: this.$select(''),
     };
   },
 
