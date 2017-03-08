@@ -6,7 +6,9 @@
 
 $c-nav: #ed1323;
 $c-white: #fefefe;
+$c-modal: #d0d0d0;
 
+$s-modal: #5c5c5c 0.1rem solid;
 $s-bottom-line: #000 0.1rem solid;
 
 @import 'box-sizing';
@@ -14,6 +16,7 @@ $s-bottom-line: #000 0.1rem solid;
 
 .navbar {
   display: flex;
+  position: relative;
   justify-content: center;
   padding: 1rem 0;
   background: $c-nav;
@@ -42,6 +45,7 @@ $s-bottom-line: #000 0.1rem solid;
 .container {
   display: flex;
   width: 60rem;
+  background: rgba(#fff,.9);
 }
 
 .sidebar {
@@ -94,7 +98,7 @@ $s-bottom-line: #000 0.1rem solid;
 }
 
 .read-more {
-  width: 100%;
+  min-width: 100%;
   padding: 0.5rem;
   border: 0;
   border-radius: 0.3rem;
@@ -122,7 +126,10 @@ $s-bottom-line: #000 0.1rem solid;
   left: 50%;
   width: 75%;
   min-height: 10rem;
+  padding: 0.5rem;
   transform: translate(-50%, -50%);
+  border: $s-modal;
+  background: $c-modal;
 
   &-desc {
 
