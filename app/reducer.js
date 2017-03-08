@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-function seriesInfo(state, action) {
+function seriesInfo(state = null, action) {
   switch (action.type) {
     case 'SERIES_INFO@LOAD_COMPLETE':
       return action.data;
@@ -11,7 +11,7 @@ function seriesInfo(state, action) {
 
 function characterData(state, action) {
   switch (action.type) {
-    case 'CHARACTERS@FINDALL_COMPLETE':
+    case 'CHARACTERS@FIND_ALL_COMPLETE':
       return action.data;
     default:
       return state;
@@ -20,7 +20,7 @@ function characterData(state, action) {
 
 function comicData(state, action) {
   switch (action.type) {
-    case 'COMICS@FINDALL_COMPLETE':
+    case 'COMICS@FIND_ALL_COMPLETE':
       return action.data;
     default:
       return state;

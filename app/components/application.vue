@@ -1,7 +1,8 @@
 <template lang="html">
   <div class="app">
     <div class="navbar">
-      <h1 class="navbar__title">Marvel</h1>
+      <img src="../../public/img/marvel-logo.png" alt="" class="navbar__logo">
+      <!-- <h1 class="navbar__title">Marvel</h1> -->
     </div>
 
     <div class="section">
@@ -103,7 +104,7 @@
 </template>
 
 <script>
-import store from 'store';
+import store from '../store';
 export default {
   data() {
     return {
