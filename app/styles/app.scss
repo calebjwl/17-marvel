@@ -77,7 +77,6 @@ $s-bottom-line: #000 0.1rem solid;
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 
   &__item {
     width: calc(100% / 4 - 2rem);
@@ -85,11 +84,28 @@ $s-bottom-line: #000 0.1rem solid;
   }
 }
 
+.pic-wrapper {
+  position: relative;
+  width: 100%;
+
+  &::before {
+    display: block;
+    padding-top: 100%;
+    content: '';
+  }
+}
+
 .card {
 
   &__pic {
-    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     border-radius: 0.5rem;
+    height: 100%;
+    width: 100%;
   }
 
   &__number {

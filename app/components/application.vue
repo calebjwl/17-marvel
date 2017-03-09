@@ -24,21 +24,13 @@
           <div class="characters">
             <h1 class="title">Characters</h1>
             <div class="grid">
-              <character-item></character-item>
+              <character-item v-for="item in characterData" v-bind:characters="item"></character-item>
           </div>
 
           <div class="comics">
             <h1 class="title">Comics</h1>
             <div class="grid">
-              <div class="grid__item">
-                <div class="card">
-                  <img src="http://fillmurray.com/100/100" alt="" class="card__pic">
-                  <p class="card__number">#1</p>
-                  <p class="card__caption">Bill Murray</p>
-                  <button class="read-more">Read More</button>
-                </div>
-              </div>
-
+              <comic-item v-for="item in comicData" v-bind:comics="item"></comic-item>
             </div>
           </div>
         </div>
@@ -55,11 +47,13 @@
 <script>
 import store from '../store';
 import CharacterItem from './character-item.vue';
+import ComicItem from './comic-item.vue';
 import { seriesInfoSearch } from '../actions';
 
 export default {
   components: {
-    CharacterItem
+    CharacterItem,
+    ComicItem
   },
 
   data() {

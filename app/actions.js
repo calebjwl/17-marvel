@@ -38,8 +38,7 @@ export function charactersFindForId(id) {
     fetch(`http://marvel-is-broke.herokuapp.com/series/${id}/characters`)
     .then(response => response.json())
     .then((data) => {
-      const characters = data.data.results[0].id;
-      next(charactersLoadComplete(characters));
+      next(charactersLoadComplete(data.data.results));
     });
   };
 }
@@ -49,7 +48,7 @@ export function comicsFindForId(id) {
     fetch(`http://marvel-is-broke.herokuapp.com/series/${id}/comics`)
     .then(response => response.json())
     .then((data) => {
-      next(comicsLoadComplete(data));
+      next(comicsLoadComplete(data.data.results));
     });
   };
 }
