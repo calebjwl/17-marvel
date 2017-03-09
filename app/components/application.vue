@@ -8,20 +8,15 @@
 
     <div class="section">
       <div class="container">
-        <div class="sidebar">
-          <img src="http://fillmurray.com/300/300" alt="" class="sidebar__pic">
-          <!-- <img :src=" `${seriesInfo.thumbnail.path}.${seriesInfo.thumbnail.extension}` " alt="" class="sidebar__pic"> -->
-          <p class="sidebar__title">A Very Murray Christmas (2010)</p>
-          <p class="year">2010</p>
-
+        <div v-if="seriesInfo" class="sidebar">
+          <!-- <img src="http://fillmurray.com/300/300" alt="" class="sidebar__pic"> -->
+          <img :src=" `${seriesInfo.thumbnail.path}.${seriesInfo.thumbnail.extension}` " alt="" class="sidebar__pic">
+          <p class="sidebar__title">{{ seriesInfo.title }}</p>
+          <p class="year">{{seriesInfo.startYear + " - " + seriesInfo.endYear}}</p>
           <div class="creators">
             <h1 class="title">Creators</h1>
             <ul class="creator-list">
-              <li class="creator">Bill Murray</li>
-              <li class="creator">Bill Murray</li>
-              <li class="creator">Bill Murray</li>
-              <li class="creator">Bill Murray</li>
-              <li class="creator">Bill Murray</li>
+              <li v-for="item in seriesInfo.creators.items" class="creator">{{ item.name }}</li>
             </ul>
           </div>
         </div>
@@ -36,25 +31,6 @@
                   <p class="card__caption">Bill Murray</p>
                 </div>
               </div>
-              <div class="grid__item">
-                <div class="card">
-                  <img src="http://fillmurray.com/100/100" alt="" class="card__pic">
-                  <p class="card__caption">Bill Murray</p>
-                </div>
-              </div>
-              <div class="grid__item">
-                <div class="card">
-                  <img src="http://fillmurray.com/100/100" alt="" class="card__pic">
-                  <p class="card__caption">Bill Murray</p>
-                </div>
-              </div>
-              <div class="grid__item">
-                <div class="card">
-                  <img src="http://fillmurray.com/100/100" alt="" class="card__pic">
-                  <p class="card__caption">Bill Murray</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div class="comics">
