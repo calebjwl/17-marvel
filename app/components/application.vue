@@ -9,7 +9,6 @@
     <div class="section">
       <div class="container">
         <div v-if="seriesInfo" class="sidebar">
-          <!-- <img src="http://fillmurray.com/300/300" alt="" class="sidebar__pic"> -->
           <img :src=" `${seriesInfo.thumbnail.path}.${seriesInfo.thumbnail.extension}` " alt="" class="sidebar__pic">
           <p class="sidebar__title">{{ seriesInfo.title }}</p>
           <p class="year">{{seriesInfo.startYear + " - " + seriesInfo.endYear}}</p>
@@ -25,12 +24,7 @@
           <div class="characters">
             <h1 class="title">Characters</h1>
             <div class="grid">
-              <div class="grid__item">
-                <div class="card">
-                  <img src="http://fillmurray.com/100/100" alt="" class="card__pic">
-                  <p class="card__caption">Bill Murray</p>
-                </div>
-              </div>
+              <character-item></character-item>
           </div>
 
           <div class="comics">
@@ -44,30 +38,7 @@
                   <button class="read-more">Read More</button>
                 </div>
               </div>
-              <div class="grid__item">
-                <div class="card">
-                  <img src="http://fillmurray.com/100/100" alt="" class="card__pic">
-                  <p class="card__number">#1</p>
-                  <p class="card__caption">Bill Murray</p>
-                  <button class="read-more">Read More</button>
-                </div>
-              </div>
-              <div class="grid__item">
-                <div class="card">
-                  <img src="http://fillmurray.com/100/100" alt="" class="card__pic">
-                  <p class="card__number">#1</p>
-                  <p class="card__caption">Bill Murray</p>
-                  <button class="read-more">Read More</button>
-                </div>
-              </div>
-              <div class="grid__item">
-                <div class="card">
-                  <img src="http://fillmurray.com/100/100" alt="" class="card__pic">
-                  <p class="card__number">#1</p>
-                  <p class="card__caption">Bill Murray</p>
-                  <button class="read-more">Read More</button>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -83,9 +54,14 @@
 
 <script>
 import store from '../store';
+import CharacterItem from './character-item.vue';
 import { seriesInfoSearch } from '../actions';
 
 export default {
+  components: {
+    CharacterItem
+  },
+
   data() {
     return {
       seriesInfo: this.$select('seriesInfo'),
