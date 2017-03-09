@@ -38,7 +38,8 @@ export function charactersFindForId(id) {
     fetch(`http://marvel-is-broke.herokuapp.com/series/${id}/characters`)
     .then(response => response.json())
     .then((data) => {
-      next(charactersLoadComplete(data));
+      const characters = data.data.results[0].id;
+      next(charactersLoadComplete(characters));
     });
   };
 }
@@ -59,8 +60,12 @@ export function seriesInfoSearch(name) {
     .then(response => response.json())
     .then((data) => {
       const series = data.data.results[0];
-      next(charactersFindForId(series.id));
-      next(comicsFindForId(series.id));
+
+      if (series) {
+        next(seriesInfoLoadComplete(series));
+        next(charactersFindForId(series.id));
+        next(comicsFindForId(series.id));
+      }
     });
   };
 }
