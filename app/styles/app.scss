@@ -149,10 +149,10 @@ $s-bottom-line: #000 0.1rem solid;
 
   &-background {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(#323232,.61);
+    background: rgba(#000,.61);
   }
 }

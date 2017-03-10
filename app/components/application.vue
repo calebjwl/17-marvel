@@ -30,7 +30,7 @@
           <div class="comics">
             <h1 class="title">Comics</h1>
             <div class="grid">
-              <comic-item v-for="item in comicData" v-bind:comics="item" v-on:readmore="showModal"></comic-item>
+              <comic-item v-for="item in comicData" v-bind:comics="item" @readmore="showModal"></comic-item>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
     <div class="modal-background" v-if="modal">
       <div class="modal">
         <button class="exit" @click="closeModal()">X</button>
-        <p class="modal-desc">{{ modal.description }}</p>
+        <p>{{ modal.description }}</p>
       </div>
     </div>
 
