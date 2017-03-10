@@ -4,8 +4,8 @@
       <div class="pic-wrapper">
         <img :src="`${comics.thumbnail.path}.${comics.thumbnail.extension}`" alt="" class="card__pic">
       </div>
-      <p class="card__number">#1</p>
-      <p class="card__caption">Bill Murray</p>
+      <p class="card__number">#{{ comics.issueNumber }}</p>
+      <p class="card__caption">{{ comics.title }}</p>
       <button class="read-more">Read More</button>
     </div>
   </div>

@@ -11,7 +11,7 @@
         <div v-if="seriesInfo" class="sidebar">
           <img :src=" `${seriesInfo.thumbnail.path}.${seriesInfo.thumbnail.extension}` " alt="" class="sidebar__pic">
           <p class="sidebar__title">{{ seriesInfo.title }}</p>
-          <p class="year">{{seriesInfo.startYear + " - " + seriesInfo.endYear}}</p>
+          <p class="year">{{seriesInfo.startYear}} - {{seriesInfo.endYear}}</p>
           <div class="creators">
             <h1 class="title">Creators</h1>
             <ul class="creator-list">
@@ -66,7 +66,7 @@ export default {
   },
 
   created() {
-    store.dispatch(seriesInfoSearch('spider'));
+    store.dispatch(seriesInfoSearch('avengers'));
   },
 
   methods: {
