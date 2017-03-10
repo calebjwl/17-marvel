@@ -6,7 +6,7 @@
       </div>
       <p class="card__number">#{{ comics.issueNumber }}</p>
       <p class="card__caption">{{ comics.title }}</p>
-      <button class="read-more">Read More</button>
+      <button id="show-modal" @click="$emit('readmore', comics)" class="read-more">Read More</button>
     </div>
   </div>
 </template>
@@ -14,14 +14,13 @@
 <script>
 export default {
   props: ['comics'],
-
   data() {
     return {
+      showModal: true
     };
   },
 
   methods: {
-
   },
 };
 </script>

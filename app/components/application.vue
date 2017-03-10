@@ -30,17 +30,20 @@
           <div class="comics">
             <h1 class="title">Comics</h1>
             <div class="grid">
-              <comic-item v-for="item in comicData" v-bind:comics="item"></comic-item>
+              <comic-item v-for="item in comicData" v-bind:comics="item" v-on:readmore="showModal"></comic-item>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="modal" v-if="modal">
-      <button class="exit">X</button>
-      <p class="modal-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="modal-background" v-if="modal">
+      <div class="modal">
+        <button class="exit" @click="closeModal()">X</button>
+        <p class="modal-desc">{{ modal.description }}</p>
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -48,12 +51,12 @@
 import store from '../store';
 import CharacterItem from './character-item.vue';
 import ComicItem from './comic-item.vue';
-import { seriesInfoSearch } from '../actions';
+import { seriesInfoSearch, setModal, clearModal } from '../actions';
 
 export default {
   components: {
     CharacterItem,
-    ComicItem
+    ComicItem,
   },
 
   data() {
@@ -66,10 +69,17 @@ export default {
   },
 
   created() {
-    store.dispatch(seriesInfoSearch('avengers'));
+    store.dispatch(seriesInfoSearch('spider'));
   },
 
   methods: {
+    showModal(data) {
+      store.dispatch(setModal(data));
+    },
+
+    closeModal(data) {
+      store.dispatch(clearModal(data));
+    }
   },
 };
 </script>
